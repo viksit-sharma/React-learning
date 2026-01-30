@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { v4 as uuidv4 } from "uuid"; //For unique keys for different tasks
 export default function TodoList() {
-  let [todo, setTodo] = useState([{ task: "Sample-Task", id: uuidv4() }]);
+  let [todo, setTodo] = useState([{ task: "Eat", id: uuidv4() }]);
   let [newTodo, setNewTodo] = useState("");
   let addNewTask = () => {
     setTodo((prevTodo) => {
@@ -22,7 +22,7 @@ export default function TodoList() {
         placeholder="Add a Task"
         value={newTodo}
         onChange={updateTodoList}
-      ></input>
+      ></input>&nbsp;&nbsp;&nbsp;
       <button onClick={addNewTask}>Add Task</button>
       &nbsp; &nbsp; &nbsp; &nbsp;
       <hr></hr>
@@ -31,7 +31,7 @@ export default function TodoList() {
         {todo.map((todos) => {
           return (
             <li key={todos.id}>
-              <span>{todos.task}</span>
+              <span>{todos.task}</span>&nbsp;&nbsp;&nbsp;
               <button onClick={() => deleteTodo(todos.id)}>Delete</button>
             </li>
           );
